@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-VEKK9KL.Furncity_dwh"
+  DTS:DTSID="{32FD8056-BF7F-48BC-A774-4248AA34587E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-VEKK9KL;Initial Catalog=Furncity_dwh;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Furncity_Pipeline-{32FD8056-BF7F-48BC-A774-4248AA34587E}DESKTOP-VEKK9KL.Furncity_dwh;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

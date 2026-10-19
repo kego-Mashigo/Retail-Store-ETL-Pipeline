@@ -1,0 +1,1872 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/15/2026 11:20:25 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-VEKK9KL"
+  DTS:CreatorName="DESKTOP-VEKK9KL\KegoM"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{720B56F2-8132-4220-9892-73650376CF2F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="7177"
+  DTS:ObjectName="Furncity_Pipeline"
+  DTS:PackageType="5"
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{BB3118B2-87F6-49C3-B2E9-7C1ABA393E3C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-VEKK9KL.master]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BA3225B0-7C0D-44F8-97E6-DC457B8395FA}"
+      DTS:ObjectName="DESKTOP-VEKK9KL.master">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VEKK9KL;Initial Catalog=master;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Furncity_Pipeline-{BA3225B0-7C0D-44F8-97E6-DC457B8395FA}DESKTOP-VEKK9KL.master;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{34E796A7-C79A-4586-B8F6-7F5A6B937512}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[KegoM::FilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="7177"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\KegoM\OneDrive\Desktop\Data Engineering\Retail-Store-ETL-Pipeline\SourceFiles\Archive\retail_sales_dataset.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Transaction ID"
+              DTS:DTSID="{F7C6EA07-9A93-40D3-9AC8-12408CB5D838}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{078EE5B2-7CD7-4D58-A5E9-5CA6EA23ABE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer ID"
+              DTS:DTSID="{31244818-0760-4DFE-A8B8-09A994DD701F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{2DDBB0D1-64C3-4E84-AF1E-D85F431F7859}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{34781B08-D4E1-4ACC-A328-37FF5BDC8A82}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Category"
+              DTS:DTSID="{49405DA4-8C50-4C93-B8DD-A7DB1882BA3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{8AE6CF5E-8E41-4BDD-900E-77059F338FB6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price per Unit"
+              DTS:DTSID="{2EE50F2A-2B2B-420F-A47C-43CFC083858F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Amount"
+              DTS:DTSID="{E2A26BB5-B53B-4D76-8C06-8CEAEA775C21}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{72ADD6B6-4AD1-4B8F-923A-6FCC85A11084}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="KegoM"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\KegoM\OneDrive\Desktop\Data Engineering\Retail-Store-ETL-Pipeline\SourceFiles\Archive\retail_sales_dataset.csv</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CreateDb_Furncity_dwh"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6477BBF3-6973-4BED-AE36-DAFB3C894B7C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CreateDb_Furncity_dwh"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BA3225B0-7C0D-44F8-97E6-DC457B8395FA}"
+          SQLTask:SqlStatementSource="USE master&#xA;&#xA;-- Create the data warehouse database.&#xA;IF NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM sys.databases&#xA;    WHERE name = N'Furncity_dwh'&#xA;)&#xA;BEGIN&#xA;    CREATE DATABASE [Furncity_dwh];&#xA;END;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CreateDb_Furncity_stg"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7511639E-0448-47E4-A1E7-DF3E4C028425}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CreateDb_Furncity_stg"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BA3225B0-7C0D-44F8-97E6-DC457B8395FA}"
+          SQLTask:SqlStatementSource="-- Create the staging database.&#xA;USE master&#xA;&#xA;IF NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM sys.databases&#xA;    WHERE name = N'Furncity_stg'&#xA;)&#xA;&#xA;BEGIN&#xA;    CREATE DATABASE [Furncity_stg];&#xA;END;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CreateTb_Rawdata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F6FA2189-3515-4EA7-8EC9-7F03A53774EC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CreateTb_Rawdata"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6F769E1-3196-444C-A3EF-7A8B58DB8727}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID(N'bronze.Rawdata', N'U') IS NULL&#xA;BEGIN&#xA;    CREATE TABLE [bronze].[Rawdata]&#xA;    (&#xA;        [transaction id]   VARCHAR(50),&#xA;        [date]             VARCHAR(50),&#xA;        [customer id]      VARCHAR(50),&#xA;        [gender] VARCHAR(50),&#xA;        [age]  VARCHAR(50),&#xA;        [product category] VARCHAR(50),&#xA;        [quantity]         VARCHAR(50),&#xA;        [price per unit]   VARCHAR(50),&#xA;        [total amount]     VARCHAR(50)&#xA;    );&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CreateTb_silver_sales"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{37EF1FA2-B1B8-4AF4-A241-EBB472A3B154}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CreateTb_silver_sales"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{32FD8056-BF7F-48BC-A774-4248AA34587E}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID(N'silver.sales', N'U') IS NULL&#xA;BEGIN&#xA;    CREATE TABLE [silver].[sales]&#xA;    (&#xA;        [transaction id]   VARCHAR(50),&#xA;        [date]             VARCHAR(50),&#xA;        [customer id]      VARCHAR(50),&#xA;        [gender] VARCHAR(50),&#xA;        [age]  VARCHAR(50),&#xA;        [product category] VARCHAR(50),&#xA;        [quantity]         VARCHAR(50),&#xA;        [price per unit]   VARCHAR(50),&#xA;        [total amount]     VARCHAR(50)&#xA;    );&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create_Schema_Bronze"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F80A4F30-0AB1-49AC-89FD-438AF62DCCC0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create_Schema_Bronze"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6F769E1-3196-444C-A3EF-7A8B58DB8727}"
+          SQLTask:SqlStatementSource="-- Create the Bronze schema in staging.&#xA;USE [Furncity_stg];&#xA;GO&#xA;&#xA;IF NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM sys.schemas&#xA;    WHERE name = N'Bronze'&#xA;)&#xA;BEGIN&#xA;    EXEC(N'CREATE SCHEMA [Bronze] AUTHORIZATION [dbo];');&#xA;END;&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create_Schema_Silver"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{41B885AB-EC4E-4A01-A475-366A1173E489}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create_Schema_Silver"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{32FD8056-BF7F-48BC-A774-4248AA34587E}"
+          SQLTask:SqlStatementSource="-- Create the Silver and Gold schemas in the warehouse.&#xA;USE [Furncity_dwh];&#xA;GO&#xA;&#xA;IF NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM sys.schemas&#xA;    WHERE name = N'Silver'&#xA;)&#xA;BEGIN&#xA;    EXEC(N'CREATE SCHEMA [Silver] AUTHORIZATION [dbo];');&#xA;END;&#xA;GO&#xA;&#xA;IF NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM sys.schemas&#xA;    WHERE name = N'Gold'&#xA;)&#xA;BEGIN&#xA;    EXEC(N'CREATE SCHEMA [Gold] AUTHORIZATION [dbo];');&#xA;END;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop -source and collection"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{80D67B2A-1315-4399-BE9A-AFEDD3098979}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop -source and collection">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{5352AD40-C861-4D19-8DE2-1ECCE99B3948}"
+        DTS:ObjectName="{5352AD40-C861-4D19-8DE2-1ECCE99B3948}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\KegoM\OneDrive\Desktop\Data Engineering\Retail-Store-ETL-Pipeline\SourceFiles" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop -source and collection\Load csv file"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{6413A966-C24C-4864-AE77-900935DDBF7F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load csv file"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Furncity_stg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Bronze].[Rawdata]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Connections[OleDbConnection]"
+                      connectionManagerID="{F6F769E1-3196-444C-A3EF-7A8B58DB8727}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-VEKK9KL.Furncity_stg]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Transaction ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Transaction ID"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[transaction id]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Transaction ID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Date]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Date"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Customer ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Customer ID"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[customer id]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Customer ID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Gender]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Gender"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Gender]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Age]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Age"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Age]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Product Category]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Product Category"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[product category]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Product Category]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Quantity"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Quantity]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Price per Unit]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Price per Unit"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[price per unit]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Price per Unit]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].Columns[Total Amount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Total Amount"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[total amount]"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Total Amount]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[transaction id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="transaction id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[customer id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="gender" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="age" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[product category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="product category" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[price per unit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="price per unit" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input].ExternalColumns[total amount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="total amount" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="7177"
+                  name="Retail_sales Flat File_Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Transaction ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Transaction ID]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Transaction ID]"
+                          name="Transaction ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Date]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Date]"
+                          name="Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Customer ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Customer ID]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Customer ID]"
+                          name="Customer ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Gender]"
+                          name="Gender"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Age]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Age]"
+                          name="Age"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Product Category]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Product Category]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Product Category]"
+                          name="Product Category"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Quantity]"
+                          name="Quantity"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Price per Unit]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Price per Unit]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Price per Unit]"
+                          name="Price per Unit"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Total Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Total Amount]"
+                          length="50"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].Columns[Total Amount]"
+                          name="Total Amount"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Transaction ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Transaction ID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Customer ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Customer ID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Age" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Product Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Product Category" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Price per Unit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Price per Unit" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output].ExternalColumns[Total Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Total Amount" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop -source and collection\Load csv file.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{77158E21-F12A-48CE-8279-FD33273EE462}"
+          DTS:ObjectName="{77158E21-F12A-48CE-8279-FD33273EE462}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="KegoM::FilePath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load data from Furncity_stg"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{80BF3D88-C70A-4D58-9498-B77EF34B24B0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load data from Furncity_stg"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load data from Furncity_stg\Furncity_dwh"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Furncity_dwh"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Silver].[sales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load data from Furncity_stg\Furncity_dwh.Connections[OleDbConnection]"
+                  connectionManagerID="{32FD8056-BF7F-48BC-A774-4248AA34587E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-VEKK9KL.Furncity_dwh]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[transaction id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transaction id"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[transaction id]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[transaction id]" />
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[date]" />
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[customer id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer id"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[customer id]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[customer id]" />
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="age"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[product category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product category"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[product category]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[product category]" />
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="quantity"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[price per unit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="price per unit"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[price per unit]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[price per unit]" />
+                    <inputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].Columns[total amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total amount"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[total amount]"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[total amount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[transaction id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="transaction id" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[customer id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="customer id" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[product category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="product category" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[price per unit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="price per unit" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input].ExternalColumns[total amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total amount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load data from Furncity_stg\Furncity_dwh.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_dwh.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_dwh.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_dwh.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Furncity_stg_Rawdata_csv"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Bronze].[Rawdata]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Connections[OleDbConnection]"
+                  connectionManagerID="{F6F769E1-3196-444C-A3EF-7A8B58DB8727}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-VEKK9KL.Furncity_stg]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[transaction id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[transaction id]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[transaction id]"
+                      name="transaction id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[customer id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[customer id]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[customer id]"
+                      name="customer id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[age]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[product category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[product category]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[product category]"
+                      name="product category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[price per unit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[price per unit]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[price per unit]"
+                      name="price per unit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[total amount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[total amount]"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].Columns[total amount]"
+                      name="total amount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[transaction id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="transaction id" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[customer id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="customer id" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[product category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="product category" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[price per unit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="price per unit" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output].ExternalColumns[total amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total amount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[transaction id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[transaction id]"
+                      name="transaction id" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[customer id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[customer id]"
+                      name="customer id" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[product category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[product category]"
+                      name="product category" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[price per unit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[price per unit]"
+                      name="price per unit" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[total amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[total amount]"
+                      name="total amount" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load data from Furncity_stg.Paths[OLE DB Source Output]"
+              endId="Package\Load data from Furncity_stg\Furncity_dwh.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{27FFA235-470C-43EF-93F5-2D3F22F9A223}"
+      DTS:From="Package\CreateDb_Furncity_stg"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create_Schema_Bronze" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B6F814B7-CDAC-47DC-82C5-4B041AB5C22E}"
+      DTS:From="Package\Create_Schema_Bronze"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\CreateTb_Rawdata" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{1FF0B264-6318-4A3C-8D38-8CAD5A235DFA}"
+      DTS:From="Package\CreateTb_Rawdata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Foreach Loop -source and collection" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{7996090F-8A17-40B3-B90C-E715D04FD65B}"
+      DTS:From="Package\Foreach Loop -source and collection"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\CreateDb_Furncity_dwh" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{8277298E-F4D4-4E98-8A79-B018F9261154}"
+      DTS:From="Package\CreateDb_Furncity_dwh"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Create_Schema_Silver" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{62CAB3E5-39B8-4BD5-A29C-54C67F9223B6}"
+      DTS:From="Package\Create_Schema_Silver"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\CreateTb_silver_sales" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{46DE5AE0-B86A-4AA9-BA22-39623BC1DE61}"
+      DTS:From="Package\CreateTb_silver_sales"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Load data from Furncity_stg" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="189.333333333334,42.6666666666667"
+          Id="Package\CreateDb_Furncity_stg"
+          TopLeft="215.8035617814,36.2631574965745" />
+        <NodeLayout
+          Size="196.666666666667,42.6666666666667"
+          Id="Package\Create_Schema_Bronze"
+          TopLeft="327.678556780198,100.578946264084" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="405.136895114733,57.5964908299079">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.874994998798,42.9824554341762"
+              Start="0,0"
+              End="20.874994998798,35.4824554341762">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="16.874994998798,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.874994998798,0"
+                    Point2="20.874994998798,0"
+                    Point3="20.874994998798,4" />
+                  <mssgle:LineSegment
+                    End="20.874994998798,35.4824554341762" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\CreateTb_Rawdata"
+          TopLeft="468.928550465831,175.842103332446" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="426.011890113531,143.245612930751">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.9166603523,32.5964904016955"
+              Start="0,0"
+              End="128.9166603523,25.0964904016955">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.2982452008478" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.2982452008478"
+                    Point2="0,16.2982452008478"
+                    Point3="4,16.2982452008478" />
+                  <mssgle:LineSegment
+                    End="124.9166603523,16.2982452008478" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.9166603523,16.2982452008478"
+                    Point2="128.9166603523,16.2982452008478"
+                    Point3="128.9166603523,20.2982452008478" />
+                  <mssgle:LineSegment
+                    End="128.9166603523,25.0964904016955" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\CreateDb_Furncity_dwh"
+          TopLeft="861.964247181483,360.774433270893" />
+        <NodeLayout
+          Size="189.333333333334,42.6666666666667"
+          Id="Package\Create_Schema_Silver"
+          TopLeft="990.357098584732,421.596489688009" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1056.63091384815,382.107766604226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.3928514032491,39.4887230837824"
+              Start="0,0"
+              End="28.3928514032491,31.9887230837824">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.3928514032491,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.3928514032491,0"
+                    Point2="28.3928514032491,0"
+                    Point3="28.3928514032491,4" />
+                  <mssgle:LineSegment
+                    End="28.3928514032491,31.9887230837824" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="185.333333333334,42.6666666666667"
+          Id="Package\CreateTb_silver_sales"
+          TopLeft="1099.64280798499,495.791977265767" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1085.0237652514,464.263156354675">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.285709400263,31.5288209110918"
+              Start="0,0"
+              End="107.285709400263,24.0288209110918">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.7644104555459" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.7644104555459"
+                    Point2="0,15.7644104555459"
+                    Point3="4,15.7644104555459" />
+                  <mssgle:LineSegment
+                    End="103.285709400263,15.7644104555459" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.285709400263,15.7644104555459"
+                    Point2="107.285709400263,15.7644104555459"
+                    Point3="107.285709400263,19.7644104555459" />
+                  <mssgle:LineSegment
+                    End="107.285709400263,24.0288209110918" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="212,42.6666666666667"
+          Id="Package\Load data from Furncity_stg"
+          TopLeft="1148.78566812937,587.76691466064" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="1192.30947465166,538.458643932434">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.4761934777086,49.3082707282058"
+              Start="0,0"
+              End="62.4761934777086,41.8082707282058">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.6541353641029" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6541353641029"
+                    Point2="0,24.6541353641029"
+                    Point3="4,24.6541353641029" />
+                  <mssgle:LineSegment
+                    End="58.4761934777086,24.6541353641029" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.4761934777086,24.6541353641029"
+                    Point2="62.4761934777086,24.6541353641029"
+                    Point3="62.4761934777086,28.6541353641029" />
+                  <mssgle:LineSegment
+                    End="62.4761934777086,41.8082707282058" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Foreach Loop -source and collection\Load csv file"
+          TopLeft="55.6785679560689,24.3909748700423" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="200.666666666667,72.6666666666667"
+          Size="200.666666666667,116"
+          Id="Package\Foreach Loop -source and collection"
+          TopLeft="641.071399913303,246.541351805834" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="554.928550465831,218.508769999113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="186.476182780805,28.0325818067213"
+              Start="0,0"
+              End="186.476182780805,20.5325818067213">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0162909033606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0162909033606"
+                    Point2="0,14.0162909033606"
+                    Point3="4,14.0162909033606" />
+                  <mssgle:LineSegment
+                    End="182.476182780805,14.0162909033606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="182.476182780805,14.0162909033606"
+                    Point2="186.476182780805,14.0162909033606"
+                    Point3="186.476182780805,18.0162909033606" />
+                  <mssgle:LineSegment
+                    End="186.476182780805,20.5325818067213" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="841.738066579969,304.541351805834">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117.559513934846,56.2330814650586"
+              Start="0,0"
+              End="117.559513934846,48.7330814650586">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="113.559513934846,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113.559513934846,0"
+                    Point2="117.559513934846,0"
+                    Point3="117.559513934846,4" />
+                  <mssgle:LineSegment
+                    End="117.559513934846,48.7330814650586" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop -source and collection\Load csv file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="218.666666666667,42.6666666666667"
+          Id="Package\Foreach Loop -source and collection\Load csv file\Retail_sales Flat File_Source"
+          TopLeft="57.4999974295498,25.9999997145251" />
+        <NodeLayout
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg"
+          TopLeft="101.874995445833,129.999998572626" />
+        <EdgeLayout
+          Id="Package\Foreach Loop -source and collection\Load csv file.Paths[Flat File Source Output]"
+          TopLeft="168.687496437691,68.6666663811918">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.333332191434"
+              Start="0,0"
+              End="0,53.833332191434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.833332191434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop -source and collection\Load csv file\Furncity_stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load data from Furncity_stg">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="208,42.6666666666667"
+          Id="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv"
+          TopLeft="62.9999981224537,5.99999982118606" />
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Load data from Furncity_stg\Furncity_dwh"
+          TopLeft="94.9999971687795,154.99999538064" />
+        <EdgeLayout
+          Id="Package\Load data from Furncity_stg.Paths[OLE DB Source Output]"
+          TopLeft="166.666664312283,48.6666664878527">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,106.333328892787"
+              Start="0,0"
+              End="0,98.8333288927874">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,98.8333288927874" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load data from Furncity_stg\Furncity_stg_Rawdata_csv">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load data from Furncity_stg\Furncity_dwh">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
